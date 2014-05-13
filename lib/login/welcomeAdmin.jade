@@ -1,0 +1,91 @@
+extend ../views/layout
+
+block content
+	h3 Welcome #{pageData.Username}. You are signed in as ADMIN.
+	p Your last login was on #{pageData.LastLogin}
+	div.home2
+	table(border=2, width='1000',height='300', align="center")
+		tr(align="center")
+			td 
+				button#searchMember.float-left.submit-button Search Member
+			td 
+				button#searchMovie.float-right.submit-button Search Movie
+			td
+				button#issueMovie.float-left.submit-button Issue a Movie
+		tr(align="center")
+			td
+				button#createMember.float-left.submit-button Create Member
+			td 
+				button#createMovie.float-left.submit-button Create Movie
+		tr(align="center")
+			td
+				button#updateMember.float-right.submit-button Update Member
+			td 
+				button#updateMovie.float-right.submit-button Update Movie
+			td 
+				button#submitMovie.float-right.submit-button Submit Movie
+			
+		tr(align="center")
+			td
+				button#deleteMember.float-right.submit-button Delete Member
+			td 
+				button#deleteMovie.float-right.submit-button Delete Movie
+		tr(align="center")
+			td
+				button#getAllMembers.float-left.submit-button Browse All Members
+			td
+				button#getAllMovies.float-left.submit-button Browse All Movies
+			td 
+				button#generateBill.float-right.submit-button Generate Bill
+		script.
+			document.getElementById("searchMember").onclick = function () {
+				location.href = "http://127.0.0.1:3000/searchMember";
+			};
+		script.
+			document.getElementById("searchMovie").onclick = function () {
+				location.href = "http://127.0.0.1:3000/searchMovie";
+			};
+		script.
+			document.getElementById("generateBill").onclick = function () {
+				location.href = "http://127.0.0.1:3000/generateBill";
+			};
+		script.
+			document.getElementById("createMovie").onclick = function () {
+				location.href = "http://127.0.0.1:3000/createMovie";
+			};
+		script.
+			document.getElementById("updateMovie").onclick = function () {
+				location.href = "http://127.0.0.1:3000/ugetAllMovies";
+			};
+		script.
+			document.getElementById("deleteMovie").onclick = function () {
+				location.href = "http://127.0.0.1:3000/dgetAllMovies";
+			};
+		script.
+			document.getElementById("createMember").onclick = function () {
+				location.href = "http://127.0.0.1:3000/createMember";
+			};
+		script.
+			document.getElementById("updateMember").onclick = function () {
+				location.href = "http://127.0.0.1:3000/updateMember";
+			};
+		script.
+			document.getElementById("deleteMember").onclick = function () {
+				location.href = "http://127.0.0.1:3000/deleteMember";
+			};
+		script.
+			document.getElementById("getAllMembers").onclick = function () {
+				location.href = "http://127.0.0.1:3000/getAllMembers";
+			};
+		script.
+			document.getElementById("getAllMovies").onclick = function () {
+				location.href = "http://127.0.0.1:3000/getAllMovies";
+			};
+		script.
+			document.getElementById("issueMovie").onclick = function () {
+				location.href = "http://127.0.0.1:3000/issueForm";
+			};		
+		script.
+			document.getElementById("submitMovie").onclick = function () {
+				location.href = "http://127.0.0.1:3000/submitMovie";
+			};											

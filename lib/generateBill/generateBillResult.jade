@@ -1,0 +1,30 @@
+extend ../views/layout
+
+block content
+	div(style='float:right')
+	p: input(type='submit', value='Logout')
+	h4(style='color: blue; font-family: Arial') Bills Generated For All Members .. 
+	- if (BillData !== 0) {
+	table(border=1)
+		thead
+			tr
+				th Membership ID
+				th Membership Type
+				th Name
+				th Number of Movies Rented
+				th Due Date
+				th Balance
+		tbody
+		
+			- for result in BillData
+				tr
+					td #{result.membershipId}
+					td #{result.MemmbershipType}
+					td #{result.name}
+					td #{result.numberofmovies}
+					td #{result.duedate}
+					td #{result.Totalamt}
+	- }
+	- else {
+	p Your search returned no results! Please try again with a different keyword.
+	- }

@@ -1,0 +1,35 @@
+extend ../views/layout
+
+block content
+	h3 Search for a Movie!
+	form(action='/searchMovie', method='post')
+		table(border='2', width='400')
+			tbody
+				tr
+					td General Search: 
+					td
+						input(type='text', placeholder='Search any word', name='fullText', id='fullText', maxlength='100')
+				tr
+					td Movie Name
+					td
+						input(type='text', placeholder='Movie Name', name='movieName', id='movieName', maxlength='120')
+				tr
+					td Movie Banner
+					td
+						input(type='text', placeholder='Movie Banner', name='movieBanner', id='movieBanner', maxlength='200')
+				tr
+					td Movie Category:
+					td
+						input(type='text', placeholder='Category', name='movieCategory', id='movieCategory', maxlength='45')
+				tr
+					td Rent Amount: 
+					td
+						input(type='text', placeholder='< = > Rent Amount', name='movieRentAmount', id='movieRentAmount', pattern='(<?[0-9]{1,})|(>?[0-9]{1,})|(=?[0-9]{1,})')
+				tr
+					td Available Copies:
+					td
+						input(type='text', placeholder='< = > Available Copies', name='movieAvailableCopies', id='movieAvailableCopies', pattern='(<?[0-9]{1,})|(>?[0-9]{1,})|(=?[0-9]{1,})')
+		p: input(type='submit', value='Search')
+	p
+	a(href='http://127.0.0.1:3000/getAllMovies') Browse All Movies
+	

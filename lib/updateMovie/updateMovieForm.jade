@@ -1,0 +1,35 @@
+extend ../views/layout
+
+block content
+	h4(style='color: blue; font-family: Arial') Update Movie Form
+	p
+	form(action='/updateMovie', method='post')
+		table(border='2', width='500')
+			tbody
+				tr
+					td Movie Name
+					td 
+						input(type='text', placeholder='Name', name='Name', id='Name',value="#{pageData.Name}", size=50)
+				tr
+					td Movie Banner
+					td
+						input(type='text', placeholder='Banner', name='Banner', id='Banner',value="#{pageData.Banner}", size=50)
+				tr
+					td Category
+					td
+						input(type='text', placeholder='Category', name='Category', id='Category',value="#{pageData.Category}", size=50)
+				tr
+					td Release Year
+					td
+						input(type='number', placeholder='Release Year', name='Release Date', id='Release Date',min="1800", max="2038",value="#{pageData.ReleaseDate}", size=50)
+				tr
+					td Rent Amount
+					td
+						input(type='number', placeholder='Rent Amount', name='Rent Amount', id='Rent Amount',value="#{pageData.RentAmount}", size=50, min="1", max="50",step="any")
+				tr
+					td Available Copies
+					td
+						input(type='number', placeholder='Available Copies', name='Available Copies', id='Available Copies',value="#{pageData.AvailableCopies}", size=50, min="1", max="100")
+						input(type='hidden', placeholder='Movie Id', name='Movie Id', id='Movie Id',value="#{pageData.Id}", size=50)
+		p: input(type='submit', value='Submit')
+	

@@ -1,0 +1,7 @@
+extend ../views/layout
+
+block content
+	p
+	form(action='/deleteMember', method='post')
+		input(type='text', placeholder='Membership ID', name='Membership ID', id='Membership ID', pattern='[0-9]{3}-?[0-9]{2}-?[0-9]{4}' required='true')
+		p: input(type='submit', value='Delete')

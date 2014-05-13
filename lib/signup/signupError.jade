@@ -1,0 +1,12 @@
+extend ../views/layout
+
+block content
+	div(style='float:right')
+		form(align='right', action='/logout', method='post')
+			p: input(type='submit', value='Logout')
+	An Error occurred!
+	p Error: #{error.message}
+	p
+		| <a href="http://127.0.0.1:3000/home">Home</a>
+	p
+		| <a href="http://127.0.0.1:3000/login">Login here</a>

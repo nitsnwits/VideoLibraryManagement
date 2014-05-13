@@ -1,0 +1,70 @@
+extend ../views/layoutExtern
+
+block content
+	h4(style='color: blue; font-family: Arial') Sign up for Video Library Management System
+	p
+	form(action='/signup', method='post')
+		table(border='2', width='500')
+			tbody
+				tr
+					td Membership ID: 
+					td
+						input(type='text', placeholder='Membership ID', name='Membership ID', id='Membership ID', pattern='[0-9]{3}-?[0-9]{2}-?[0-9]{4}')
+				tr
+					td Email ID:
+					td
+						input(type='email', placeholder='Email', name='Email', id='Email', required='true')
+				tr
+					td First Name:
+					td
+						input(type='text', placeholder='First Name', name='First Name', id='First Name')
+				tr
+					td Last Name:
+					td
+						input(type='text', placeholder='Last Name', name='Last Name', id='Last Name')
+				tr
+					td Password:
+					td
+						p: input(type='password', placeholder='Password', name='Password', id='Password', required='true')
+				tr
+					td Confirm Password:
+					td
+						p: input(type='password', placeholder='Password confirmation', name='Password confirmation', id='Password confirmation', required='true')
+				tr
+					td Address line 1:
+					td
+						input(type='text', placeholder='Address1', name='Address1', id='Address1')
+				tr
+					td Address line 2:
+					td
+						input(type='text', placeholder='Address2', name='Address2', id='Address2')
+				tr
+					td City:
+					td
+						input(type='text', placeholder='City', name='City', id='City')
+				tr
+					td State:
+					td
+						input(type='text', placeholder='State', name='State', id='State')
+				tr
+					td Zip Code:
+					td
+						input(type='zip', placeholder='Zipcode', name='Zipcode', id='Zipcode', pattern='([0-9]{5})|([0-9]{5}-?[0-9]{4})')
+				tr
+					td What kind of user you are?
+					td
+						p Premium
+							input(type='radio', id='isPremium', name='isPremium' value='1')
+						p Simple
+							input(type='radio', id='isSimple', name='isPremium', value='2', checked='true')
+						p Admin
+							input(type='radio', id='admin', name='isPremium' value='0')
+		p: input(type='submit', value='Signup')
+		p: input(type='reset', value='Reset')
+	p
+		| Already a user? Great!
+		button#myButton.float-right.submit-button Login here
+		script.
+			document.getElementById("myButton").onclick = function () {
+				location.href = "http://127.0.0.1:3000/login";
+			};		

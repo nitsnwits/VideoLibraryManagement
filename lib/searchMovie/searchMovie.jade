@@ -1,0 +1,33 @@
+extend ../views/layout
+
+block content
+   h4(style='color: blue; font-family: Arial') Results for your search .. 
+   - if (movies !== 0) {
+    table(border='2', width='1100', align="center")
+     thead
+      tr
+       th Movie Name
+       th Banner
+       th Category
+       th Release Date
+       th Rent Amount
+       th Available Copies
+       th Update
+       th Delete
+     tbody
+      - each val, key in movies
+       tr
+        - each movie, attrib in val
+         if (attrib != 'parse' && attrib != '_typeCast')
+          if (attrib != 'id')
+           td #{movie}
+          else
+           td
+            a(href='http://127.0.0.1:3000/updateMovie/' + movie) Update Movie
+           td
+            a(href='http://127.0.0.1:3000/deleteMovie/' + movie) Delete Movie        
+   - }
+   - else {
+    p Your search returned no results! Please try again with a different keyword. 
+   - }
+   p: a(href="http://127.0.0.1:3000/searchMovie") << Go Back

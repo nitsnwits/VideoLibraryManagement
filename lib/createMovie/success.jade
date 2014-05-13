@@ -1,0 +1,9 @@
+extend ../views/layout
+
+block content
+	h3 You have successfully inserted the movie.
+	button#createMovie.float-right.submit-button Create another Movie!	
+	script.
+		document.getElementById("createMovie").onclick = function () {
+			location.href = "http://127.0.0.1:3000/createMovie";
+		};

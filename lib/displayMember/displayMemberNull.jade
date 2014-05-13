@@ -1,0 +1,23 @@
+extend ../views/layout
+
+block content
+   h4(style='color: blue; font-family: Arial') Member Info:
+    table(border='2', width='1100')
+     thead
+      tr
+       th Membership ID
+       th User's Name
+       th Last Name
+       th Email
+       th Address
+       th 
+       th City
+       th State
+       th Zip
+     tbody
+      - each val, key in users
+       tr
+        - each user, attrib in val
+         if (attrib != 'parse' && attrib != '_typeCast')
+          td #{user}
+   h4(style='color: blue; font-family: Arial') This user has not issued any movies.

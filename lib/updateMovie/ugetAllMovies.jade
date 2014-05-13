@@ -1,0 +1,31 @@
+extends ../views/layout
+
+block content
+	h1= title
+	form(method="post", action="http://127.0.0.1:3000/ugetAllMovies")
+		p: |Movies by Category:
+		select(name="cat")
+			option(value="All") --All--
+			for result in catas	
+				option(value="#{result.category}") #{result.category}
+		p: input(type='submit', value='Go')
+	h1 Movies List:
+	table(border='2', width='1000', align="center")
+		tr
+			th Movie Name
+			th Banner
+			th Category
+			th Release Date
+			th Rent Amount
+			th Available copies
+			th Change
+		for result in results
+			tr(align="center")
+				td #{result.name}
+				td #{result.banner}
+				td #{result.category}
+				td #{result.releaseDate}
+				td $#{result.rentAmount}
+				td #{result.availableCopies}
+				td
+					a(href="http://127.0.0.1:3000/updateMovie/#{result.id}")  Update

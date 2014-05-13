@@ -1,0 +1,51 @@
+extend ../views/layout
+
+block content
+	h3 Search for a Member!
+	form(action='/searchMember', method='post')
+		table(border='2', width='500')
+			tbody
+				tr
+					td General Search: 
+					td
+						input(type='text', placeholder='Search any word', name='fullText', id='fullText', maxlength='100')
+				tr
+					td Membership Id: 
+					td
+						input(type='text', placeholder='Membership Id', name='membershipId', id='membershipId',pattern='[0-9]{3}-?[0-9]{2}-?[0-9]{4}')
+				tr
+					td Email Id: 
+					td
+						input(type='email', placeholder='Email Id', name='email', id='email', maxlength='45')
+				tr
+					td First Name: 
+					td
+						input(type='text', placeholder='First Name', name='fName', id='fName', maxlength='45')
+				tr
+					td Last Name: 
+					td
+						input(type='text', placeholder='Last Name', name='lName', id='lName', maxlength='45')
+				tr
+					td Address Line 1:
+					td
+						input(type='text', placeholder='Address Line 1', name='address1', id='address1', maxlength='100')
+				tr
+					td Address Line 2:
+					td
+						input(type='text', placeholder='Address Line 2', name='address2', id='address2', maxlength='100')
+				tr
+					td City: 
+					td
+						input(type='text', placeholder='City', name='city', id='city', maxlength='45')
+				tr
+					td State: 
+					td
+						input(type='text', placeholder='State', name='State', id='State', maxlength='45')
+				tr
+					td Zip Code: 
+					td
+						input(type='zip', placeholder='Zip', name='zip', id='zip', maxlength='10', pattern='([0-9]{5})|([0-9]{5}-?[0-9]{4})')
+		p: input(type='submit', value='Search')
+	p
+	a(href='http://127.0.0.1:3000/getAllMembers') Browse All members
+	

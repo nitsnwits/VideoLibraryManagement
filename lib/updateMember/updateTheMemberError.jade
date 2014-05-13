@@ -1,0 +1,8 @@
+extend ../views/layout
+
+block content
+	h3 Error occurred while updating member Id #{pageData.email}!	
+	p #{pageData.Error}
+	p Try again.
+	a(href='http://127.0.0.1:3000/updateMember') Update Member
+	

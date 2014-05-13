@@ -1,0 +1,9 @@
+extend ../views/layout
+
+block content
+	p Error: #{error.message}
+	button#createMember.float-right.submit-button Try creating a Member again!	
+	script.
+		document.getElementById("createMember").onclick = function () {
+			location.href = "http://127.0.0.1:3000/createMember";
+		};

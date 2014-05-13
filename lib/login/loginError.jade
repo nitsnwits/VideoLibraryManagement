@@ -1,0 +1,14 @@
+extend ../views/layoutExtern
+
+block content
+	h3 Invalid username or password, Please login again.
+	button#login.float-right.submit-button Try Again		
+	script.
+		document.getElementById("login").onclick = function () {
+			location.href = "http://127.0.0.1:3000/login";
+		};
+	button#signup.float-right.submit-button New user? Sign up		
+	script.
+		document.getElementById("signup").onclick = function () {
+			location.href = "http://127.0.0.1:3000/signup";
+		};		

@@ -1,0 +1,7 @@
+extend ../views/layout
+
+block content
+	h3 Search the member you want to update
+	form(action='/updateMemberSearch', method='post')
+		input(type='email', placeholder='Email ID', name='Email ID', id='Email ID', required)
+		p: input(type='submit', value='Search')

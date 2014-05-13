@@ -1,0 +1,22 @@
+html
+	head
+		title(style='color: blue; font-family: Arial') VLM 
+	body
+		div.home
+			h3(style='color: blue; font-family: Arial') Video Library Management System by 7Noders
+		div.home2
+			button#myButton.float-left.submit-button Video Library Home
+			button#myButton2.float-right.submit-button Logout
+			script.
+				document.getElementById("myButton").onclick = function () {
+					location.href = "http://127.0.0.1:3000/home";
+				};
+			script.
+				document.getElementById("myButton2").onclick = function () {
+					var form = document.createElement('form');
+					form.setAttribute('method', 'post');
+					form.setAttribute('action', 'http://127.0.0.1:3000/logout');
+					form.submit();
+				};
+		section.container!= body
+		block content

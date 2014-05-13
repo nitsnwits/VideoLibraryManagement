@@ -1,0 +1,12 @@
+extend ../views/layout
+
+block content
+	p 
+	p Error: #{error.message}
+	p
+	button#deleteMember.float-right.submit-button Try deleting Member again!
+	script.
+		document.getElementById("deleteMember").onclick = function () {
+			location.href = "http://127.0.0.1:3000/deleteMember";
+		};
+	

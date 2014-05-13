@@ -1,0 +1,37 @@
+extends ../views/layout
+
+block content
+	h1= title
+	form(name="list", method="post", action="http://127.0.0.1:3000/issue")
+		p: |Movies by Category:
+		select(name="cat")
+			option(value="All") --All--
+			for result in catas	
+				option(value="#{result.category}") #{result.category}
+		p: input(type='submit', value='Go')
+	form(name="list", method="post", action="http://127.0.0.1:3000/issueMovie")
+		p: |Enter Membership ID :
+		input(type='text', name='memid', pattern='[0-9]{3}-?[0-9]{2}-?[0-9]{4}',required)
+		h1 Movies List:
+		input(type='submit', value='Issue Movie')
+		table(border='1', width='500')
+			tr
+				th Movie Name
+				th Banner
+				th Category
+				th Release Date
+				th Rent Amount
+				th Available copies
+				th Select Movie
+			for result in results
+				tr(align="center")
+					td #{result.name}
+					td #{result.banner}
+					td #{result.category}
+					td #{result.releaseDate}
+					td $#{result.rentAmount}
+					td #{result.availableCopies}
+					td 
+						input(type='radio',name="movid", value='#{result.id}')
+		input(type='submit', value='Issue Movie')
+	

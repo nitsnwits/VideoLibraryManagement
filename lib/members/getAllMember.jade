@@ -1,0 +1,30 @@
+extends ../views/layout
+
+block content
+	h1= title
+	form(method="post", action="http://127.0.0.1:3000/getAllMembers")
+		h3 Select Type of Member
+		input(type='radio', name='member', value='1')
+		| Premium Members
+		br
+		input(type='radio', name='member', value='2')
+		| Simple Members
+		br
+		input(type='radio', name='member', value='0', checked='')
+		| ALL Members
+		br
+		input(type='submit', value='Go')
+	h1 #{user.name} Members List:
+	table(border='2', width='1100')
+		tr
+			th Membership Id
+			th First Name
+			th Last Name
+			th Movie List
+		for result in results
+			tr(align="center")
+				td #{result.membershipId}
+				td #{result.fName}
+				td #{result.lName}
+				td
+					a(href="http://127.0.0.1:3000/displayMember/#{result.id}")  Display Info

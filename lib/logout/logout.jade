@@ -1,0 +1,14 @@
+extend ../views/layoutExtern
+
+block content
+	h3 Thank you for using Video Library Management System. You're now logged out.
+	button#myButton.float-left.submit-button Login Here
+	button#myButton2.float-right.submit-button New user? Sign up
+	script.
+		document.getElementById("myButton").onclick = function () {
+			location.href = "http://127.0.0.1:3000/login";
+		};
+	script.
+		document.getElementById("myButton2").onclick = function () {
+			location.href = "http://127.0.0.1:3000/signup";
+		};

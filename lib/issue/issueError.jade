@@ -1,0 +1,6 @@
+extends ../views/layout
+
+block content
+	h1= title
+	h3(style='color: red') #{error.message}
+	p: a(href="http://127.0.0.1:3000/issueForm")<< Go Back To Issue Form

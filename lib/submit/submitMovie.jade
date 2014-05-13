@@ -1,0 +1,21 @@
+extends ../views/layout
+
+block content
+	h1= title
+	form(name="list", method="post", action="http://127.0.0.1:3000/submitMovie", align=center)
+		h1 Movies List:
+		input(type='submit', value='Submit Movie')
+		table(border='2', width='1100', align="center")
+			tr
+				th Member Id
+				th Movie Name
+				th Issue date
+				th Select Movie
+			for result in results
+				tr(align="center")
+					td #{result.membershipId}
+					td #{result.name}
+					td #{result.issueDate}
+					td 
+						input(type='radio',name="orderid", value='#{result.id}')
+		input(type='submit', value='Submit Movie')

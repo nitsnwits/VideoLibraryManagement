@@ -1,0 +1,11 @@
+extends ../views/layout
+
+block content
+	h1= title
+	form(method="post", action="http://127.0.0.1:3000/getAllMovies")
+		p: |Movies by Category:
+		select(name="cat")
+			option(value="All") --All--
+			for result in catas	
+				option(value="#{result.category}") #{result.category}
+		p: input(type='submit', value='Go')

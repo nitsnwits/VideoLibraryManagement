@@ -1,0 +1,27 @@
+extend ../views/layout
+
+block content
+	h3 Welcome back #{name}. You are logged in with #{email}.
+		| &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		| &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Last Login: #{login}
+	div.home2
+	table(border=2, width='500',height='100', align="center")
+		tr(align="center")
+			td 
+				button#getAllMembers.float-left.submit-button Browse All Members
+			td 
+				button#getAllMovies.float-left.submit-button Browse All Movies
+			td
+				button#userInfo.float-left.submit-button View Balance
+		script.
+			document.getElementById("getAllMembers").onclick = function () {
+				location.href = "http://127.0.0.1:3000/getAllMembers";
+			};
+		script.
+			document.getElementById("getAllMovies").onclick = function () {
+				location.href = "http://127.0.0.1:3000/getAllMovies";
+			};
+		script.
+			document.getElementById("userInfo").onclick = function () {
+				location.href = "http://127.0.0.1:3000/userInfo";
+			};																						

@@ -1,0 +1,56 @@
+extend ../views/layout
+
+block content
+	h4(style='color: blue; font-family: Arial') Update Member Form
+	p
+	form(action='/updateThisMember', method='post')
+		p: input(type='hidden', name='id', value=pageData.id)
+		table(border='2', width='500')
+			tbody
+				tr
+					td Membership Id
+					td
+						input(type='text', placeholder='Membership ID', value=pageData.membershipId, name='Membership ID', id='Membership ID', pattern='[0-9]{3}-?[0-9]{2}-?[0-9]{4}',required, size=50)
+				tr
+					td Email
+					td
+						input(type='email', placeholder='Email', value=pageData.email, name='Email', id='Email',required, size=50)
+				tr
+					td First Name
+					td
+						input(type='text', placeholder='First Name', value=pageData.fName, name='First Name', id='First Name', size=50)
+				tr
+					td Last Name
+					td
+						input(type='text', placeholder='Last Name', value=pageData.lName, name='Last Name', id='Last Name', size=50)
+				tr
+					td Password
+					td
+						input(type='text', placeholder='Password', value=pageData.password, name='Password', id='Password', size=50)
+				tr
+					td Address Part 1
+					td
+						input(type='text', placeholder='Address1', value=pageData.address1, name='Address1', id='Address1', size=50)
+				tr
+					td Address Part 2
+					td
+						input(type='text', value=pageData.address2, name='Address2', id='Address2', size=50)
+				tr
+					td City
+					td
+						input(type='text', placeholder='City', value=pageData.city, name='City', id='City', size=50)
+				tr
+					td State
+					td
+						input(type='text', placeholder='State', value=pageData.state, name='State', id='State', size=50)
+				tr
+					td Zip
+					td
+						input(type='text', placeholder='Zip', value=pageData.zip, name='Zipcode', id='Zipcode',pattern='([0-9]{5})|([0-9]{5}-?[0-9]{4})', size=50)
+				tr
+					td Simple or Premium (2,1)
+					td
+						input(type='number', min='1', max='2', placeholder='Admin Flag', value=pageData.adminflag, name='adminFlag', id='adminFlag', size=50,required)
+		p: input(type='hidden', name='updateRequested', value=updateRequested)
+		p: input(type='submit', value='Update User')
+		

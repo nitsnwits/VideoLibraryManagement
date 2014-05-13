@@ -1,0 +1,17 @@
+extend ../views/layoutExtern
+
+block content
+	form(action='/login', method='post')
+		table(border='2', width='500')
+			tbody
+				tr
+					td UserName: 
+					td
+						input(type='text', placeholder='Username', name='Username', id='Username', required='true', min='4', max='45')
+				tr
+					td Password:
+					td
+						input(type='password', placeholder='Password', name='Password', id='Password', required='true', min='2', max='45')
+		p: input(type='submit', value='Login')
+	form(action='/signup', method='get')
+		p: input(type='submit', value='Signup')

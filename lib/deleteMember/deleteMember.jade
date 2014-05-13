@@ -1,0 +1,10 @@
+extend ../views/layout
+
+block content
+	p
+	h3 You have successfully deleted a member!!
+	button#deleteMember.float-right.submit-button Delete Another Member	
+	script.
+		document.getElementById("deleteMember").onclick = function () {
+			location.href = "http://127.0.0.1:3000/deleteMember";
+		};
